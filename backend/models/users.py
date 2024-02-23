@@ -14,3 +14,4 @@ class User(Base):
     last_name: Mapped[str]
     hashed_password: Mapped[str]
     is_author: Mapped[bool] = mapped_column(default=False)
+    is_active: Mapped[bool] = mapped_column(default=False)
