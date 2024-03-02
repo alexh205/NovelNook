@@ -14,7 +14,7 @@ develop-eggs/
 dist/
 downloads/
 eggs/
-.eggs/
+*.eggs/
 lib/
 lib64/
 parts/
@@ -73,11 +73,11 @@ instance/
 docs/_build/
 
 # PyBuilder
-.pybuilder/
+*.pybuilder/
 target/
 
 # Jupyter Notebook
-.ipynb_checkpoints
+*.ipynb_checkpoints
 
 # IPython
 profile_default/
@@ -161,4 +161,4 @@ cython_debug/
 #.idea/
 
 node_modules
-.db
+*.db

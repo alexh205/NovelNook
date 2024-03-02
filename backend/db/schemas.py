@@ -29,7 +29,7 @@ class UserInDBBase(UserBase):
     updated_at: Optional[datetime]
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 ############ ! Book Schema #####################
@@ -57,7 +57,7 @@ class BookInDBBase(BookBase):
     updated_at: Optional[datetime]
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 ############ * Review Schema #####################
@@ -84,4 +84,4 @@ class ReviewInDBBase(ReviewBase):
     updated_at: Optional[datetime]
 
     class Config:
-        orm_mode = True
+        from_attributes = True
