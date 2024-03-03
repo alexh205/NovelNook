@@ -34,6 +34,7 @@ class UserInDBBase(UserBase):
 
 ############ ! Book Schema #####################
 
+
 class BookBase(BaseModel):
     title: str
     authorId: Optional[int] = None
@@ -61,6 +62,7 @@ class BookInDBBase(BookBase):
 
 
 ############ * Review Schema #####################
+
 
 class ReviewBase(BaseModel):
     title: str

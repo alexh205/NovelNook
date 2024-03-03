@@ -1,6 +1,6 @@
 from db.schemas import UserCreate
 from sqlalchemy.orm import Session
-from db.models.usersModel import User
+from models.usersModel import User
 
 
 def get_user(db: Session, user_id: int):
@@ -16,8 +16,7 @@ def get_users(db: Session, skip: int = 0, limit: int = 100):
 
 
 def create_user(db: Session, user: UserCreate):
-    db_user = User(
-        email=user.email)
+    db_user = User(email=user.email)
     db.add(db_user)
     db.commit()
     db.refresh(db_user)

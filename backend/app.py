@@ -1,22 +1,15 @@
 from db import schemas
-from db.api import users_router
+from api import users_router
 from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI, HTTPException
-from db.database import Base, engine, SessionLocal
+from db.database import Base, engine, get_db
 
 # FASTAPI
 app = FastAPI()
 
+
+# Creating SQL Tables
 Base.metadata.create_all(bind=engine)
-
-
-# Dependency
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 @app.post("/users/", response_model=schemas.UserBase)
