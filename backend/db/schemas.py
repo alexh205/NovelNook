@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from datetime import datetime
 from typing import Optional
 
@@ -26,10 +26,9 @@ class UserInDBBase(UserBase):
     is_author: bool = False
     is_active: bool = False
     created_at: datetime
-    updated_at: Optional[datetime]
+    updated_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 ############ ! Book Schema #####################
@@ -55,10 +54,9 @@ class UpdateBook(BookBase):
 class BookInDBBase(BookBase):
     id: int
     created_at: datetime
-    updated_at: Optional[datetime]
+    updated_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 ############ * Review Schema #####################
@@ -83,7 +81,6 @@ class UpdateReview(ReviewBase):
 class ReviewInDBBase(ReviewBase):
     id: int
     created_at: datetime
-    updated_at: Optional[datetime]
+    updated_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
