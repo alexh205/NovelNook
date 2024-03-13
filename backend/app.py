@@ -1,15 +1,16 @@
 from fastapi import FastAPI
-from sqlmodel import SQLModel
+from database import create_db_and_tables, engine
+from seeders import seed_users
 
-from database import engine
 
 # FASTAPI
 app = FastAPI()
 
 
-# Creating SQL Tables
-def create_db_and_tables():
-    SQLModel.metadata.create_all(engine)
+def main():
+    create_db_and_tables()
+    seed_users()
 
 
-create_db_and_tables()
+if __name__ == "__main__":
+    main()
