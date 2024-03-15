@@ -1,11 +1,11 @@
 from sqlmodel import create_engine, SQLModel
 
 """Python executes all the code creating the classes inheriting from SQLModel and registering them in the SQLModel.metadata"""
-from models import User
+from models import User, Book
+from decouple import config
 
-sqlite_url = f"sqlite:///database/database.db"
-
-engine = create_engine(sqlite_url, echo=True)
+DATABASE_URL = config("DATABASE_URL")
+engine = create_engine(DATABASE_URL, echo=True)
 
 
 # Creating SQL Tables
