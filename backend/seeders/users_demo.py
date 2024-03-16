@@ -47,3 +47,10 @@ def seed_users():
         user = User(**user_data)
         session.add(user)
     session.commit()
+
+
+def undo_users():
+    users = session.exec(User).all()
+    for user in users:
+        session.delete(user)
+    session.commit()
