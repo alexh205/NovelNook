@@ -16,6 +16,7 @@ def seed_books():
             "genre": "Self-help",
             "description": "Guide to unlocking your potential",
             "cover_image": "https://plus.unsplash.com/premium_photo-1674727219390-5953cefb3cd9?q=80&w=2389&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "author_id": "1",
         },
         {
             "title": "Software Architecture Patterns: Building Scalable and Maintainable Systems",
@@ -23,6 +24,7 @@ def seed_books():
             "genre": "Non-fiction",
             "description": "Building patterns to manage scalable and maintainable systems",
             "cover_image": "https://plus.unsplash.com/premium_photo-1674727219390-5953cefb3cd9?q=80&w=2389&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "author_id": "2",
         },
         {
             "title": "Test-Driven Development: By Example",
@@ -30,6 +32,7 @@ def seed_books():
             "genre": "Non-fiction",
             "description": "Test to perfection",
             "cover_image": "https://plus.unsplash.com/premium_photo-1674727219390-5953cefb3cd9?q=80&w=2389&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "author_id": "3",
         },
         {
             "title": "The Art of Self-Confidence: Overcoming Doubt and Embracing Your True Self",
@@ -37,6 +40,7 @@ def seed_books():
             "genre": "Self-help",
             "description": "Embracing Your Authenticity: The Mastery of Self-Confidence Through Overcoming Doubt and Nurturing Your True Self",
             "cover_image": "https://plus.unsplash.com/premium_photo-1674727219390-5953cefb3cd9?q=80&w=2389&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "author_id": "2",
         },
         {
             "title": "Refactoring: Improving the Design of Existing Code",
@@ -44,6 +48,7 @@ def seed_books():
             "genre": "Non-fiction",
             "description": "Revitalizing Software Design: A Comprehensive Guide to Enhancing Existing Code through the Art of Refactoring",
             "cover_image": "https://plus.unsplash.com/premium_photo-1674727219390-5953cefb3cd9?q=80&w=2389&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "author_id": "1",
         },
         {
             "title": "Financial Freedom: Strategies for Building Wealth and Security",
@@ -51,6 +56,7 @@ def seed_books():
             "genre": "Self-help",
             "description": "Build a life long wealth",
             "cover_image": "https://plus.unsplash.com/premium_photo-1674727219390-5953cefb3cd9?q=80&w=2389&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "author_id": "3",
         },
     ]
 

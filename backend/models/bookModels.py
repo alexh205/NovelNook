@@ -11,3 +11,5 @@ class Book(SQLModel, table=True):
     cover_image: str
     created_at: datetime | None
     updated_at: datetime | None
+
+    author_id: int | None = Field(default=None, foreign_key="user.id")
