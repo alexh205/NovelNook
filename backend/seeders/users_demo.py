@@ -1,6 +1,6 @@
 from models import User
 from database import engine
-from sqlmodel import Session
+from sqlmodel import Session, select
 
 
 session = Session(engine)
@@ -50,7 +50,7 @@ def seed_users():
 
 
 def undo_users():
-    users = session.exec(User).all()
+    users = session.exec(select(User)).all()
     for user in users:
         session.delete(user)
     session.commit()

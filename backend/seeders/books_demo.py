@@ -1,6 +1,7 @@
+from sqlalchemy import Select
 from models import Book
 from database import engine
-from sqlmodel import Session
+from sqlmodel import Session, select
 
 
 session = Session(engine)
@@ -32,7 +33,7 @@ def seed_books():
         },
         {
             "title": "The Art of Self-Confidence: Overcoming Doubt and Embracing Your True Self",
-            "publication_year": "",
+            "publication_year": "2023",
             "genre": "Self-help",
             "description": "Embracing Your Authenticity: The Mastery of Self-Confidence Through Overcoming Doubt and Nurturing Your True Self",
             "cover_image": "https://plus.unsplash.com/premium_photo-1674727219390-5953cefb3cd9?q=80&w=2389&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -60,7 +61,7 @@ def seed_books():
 
 
 def undo_books():
-    books = session.exec(Book).all()
+    books = session.exec(select(Book)).all()
     for book in books:
         session.delete(book)
     session.commit()
