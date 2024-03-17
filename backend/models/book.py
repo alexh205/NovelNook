@@ -1,7 +1,5 @@
-from typing import Optional
 from datetime import datetime
 from sqlmodel import Field, Session, SQLModel, create_engine
-
 
 class Book(SQLModel, table=True):
     id: int = Field(primary_key=True, index=True)
@@ -12,7 +10,7 @@ class Book(SQLModel, table=True):
     cover_image: str
     created_at: datetime = Field(default_factory=datetime.utcnow, nullable=False)
     updated_at: datetime = Field(default_factory=datetime.utcnow, nullable=False)
-    # author_id ?
+    author_id: int = Field(default=None, foreign_key="user.id")
 
     class Config:
         from_attributes = True
