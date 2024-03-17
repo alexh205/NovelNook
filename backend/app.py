@@ -4,12 +4,12 @@ from seeders import seed_all, undo_seed_all, session, select, User
 # FASTAPI
 app = FastAPI()
 
-book_router = SQLAlchemyCRUDRouter(
-    schema=BookSchema,
-    create_schema=BookCreate, 
-    db_model=Book,
-    db=get_db
-)
+# book_router = SQLAlchemyCRUDRouter(
+#     schema=BookSchema,
+#     create_schema=BookCreate,
+#     db_model=Book,
+#     db=get_db
+# )
 
 # user_router = SQLAlchemyCRUDRouter(
 #     schema=UserSchema,
@@ -18,16 +18,19 @@ book_router = SQLAlchemyCRUDRouter(
 #     db=get_db
 # )
 
-app.include_router(book_router)
+# app.include_router(book_router)
 # app.include_router(user_router)
+
 
 @app.get("/ping")
 async def ping():
     return {"test": "acknowledged!"}
 
+
 @app.get("/")
 def front_page():
     return {"Hello": "World!"}
+
 
 def start_up():
     users = session.exec(select(User)).all()

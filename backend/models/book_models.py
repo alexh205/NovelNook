@@ -1,5 +1,5 @@
-from datetime import datetime
-from sqlmodel import Field, Session, SQLModel, create_engine
+from . import Field, SQLModel, datetime
+
 
 class Book(SQLModel, table=True):
     id: int = Field(primary_key=True, index=True)
@@ -14,6 +14,7 @@ class Book(SQLModel, table=True):
 
     class Config:
         from_attributes = True
+
 
 # engine = create_engine("sqlite:///database.db")
 
