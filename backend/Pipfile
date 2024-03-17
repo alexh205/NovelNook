@@ -4,15 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = "*"
+fastapi = "==0.109.2"
 uvicorn = "==0.27.1"
 pydantic = "==2.6.1"
 python-decouple = "==3.8"
 bcrypt = "==4.1.2"
 sqlmodel = "==0.0.16"
 alembic = "==1.13.1"
-fastapi-crudrouter = "*"
-sqlmodel = "*"
 
 [dev-packages]
 
