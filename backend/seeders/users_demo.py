@@ -31,14 +31,30 @@ def seed_users():
             "last_name": "King",
             "is_author": False,
         },
-        {
-            "username": "demo3",
-            "email": "melindaRoberts@booknook.io",
+         {
+            "username": "rebecca",
+            "email": "rebecca@booknook.io",
             "password": "password4",
-            "first_name": "Melinda",
-            "last_name": "Roberts",
-            "is_author": False,
+            "first_name": "Rebecca",
+            "last_name": "Kuang",
+            "is_author": True,
         },
+         {
+            "username": "donna",
+            "email": "donna@booknook.io",
+            "password": "password5",
+            "first_name": "Donna",
+            "last_name": "Tartt",
+            "is_author": True,
+        },
+         {
+            "username": "kamala",
+            "email": "kamala@booknook.io",
+            "password": "password6",
+            "first_name": "Kamala",
+            "last_name": "Markandaya",
+            "is_author": True,
+        }
     ]
 
     for user_data in users:
