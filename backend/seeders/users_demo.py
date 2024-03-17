@@ -1,6 +1,4 @@
-from models import User
-from database import engine
-from sqlmodel import Session, select
+from . import User, engine, Session, select
 
 
 session = Session(engine)

@@ -1,8 +1,4 @@
-from sqlalchemy import Select
-from models import Book
-from database import engine
-from sqlmodel import Session, select
-
+from . import Book, engine, Session, select
 
 session = Session(engine)
 

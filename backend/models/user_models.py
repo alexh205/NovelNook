@@ -1,5 +1,4 @@
-from datetime import datetime
-from sqlmodel import Field, SQLModel
+from . import Field, SQLModel, datetime
 
 
 class User(SQLModel, table=True):
