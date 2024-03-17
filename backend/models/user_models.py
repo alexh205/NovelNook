@@ -1,4 +1,7 @@
+from typing import List
 import bcrypt
+
+# from sqlmodel import Relationship
 from . import Field, SQLModel, datetime, Column, DateTime, func
 
 
@@ -28,6 +31,10 @@ class User(SQLModel, table=True):
         ),
     )
 
+    # ! Relationships
+    # books: List["Book"] = Relationship(back_populates="author")
+
+    # ? Methods
     def __init__(self, *args, **kwargs):
         """
         Method that is called with each class instance creation for password hashing functionality
