@@ -15,7 +15,7 @@ class Book(SQLModel, table=True):
     # author_id ?
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 book_1 = Book(title="Babel", publication_year="2022", genre="Fantasy fiction", description="From award-winning author R. F. Kuang comes Babel, a historical fantasy epic that grapples with student revolutions, colonial resistance, and the use of language and translation as the dominating tool of the British Empire.", cover_image="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1677361825i/57945316.jpg")
