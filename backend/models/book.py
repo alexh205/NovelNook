@@ -10,8 +10,8 @@ class Book(SQLModel, table=True):
     genre: str
     description: str = Field(max_length=180)
     cover_image: str
-    created_at: datetime = Field(sa_column_kwargs={"timezone": True}, default=datetime.now())
-    updated_at: datetime = Field(sa_column_kwargs={"timezone": True})
+    # created_at: datetime = Field(default=datetime.now())
+    # updated_at: datetime
     # author_id ?
 
     class Config:
