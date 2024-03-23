@@ -1,35 +1,17 @@
 from fastapi import FastAPI
 from seeders import seed_all, undo_seed_all, session, select, User
+from api import user
 
 # FASTAPI
 app = FastAPI()
 
-# book_router = SQLAlchemyCRUDRouter(
-#     schema=BookSchema,
-#     create_schema=BookCreate,
-#     db_model=Book,
-#     db=get_db
-# )
 
-# user_router = SQLAlchemyCRUDRouter(
-#     schema=UserSchema,
-#     create_schema=UserCreateSchema,
-#     db_model=UserDBModel,
-#     db=get_db
-# )
-
-# app.include_router(book_router)
-# app.include_router(user_router)
+app.include_router(user.router)
 
 
 @app.get("/ping")
 async def ping():
     return {"test": "acknowledged!"}
-
-
-@app.get("/")
-def front_page():
-    return {"Hello": "World!"}
 
 
 def start_up():

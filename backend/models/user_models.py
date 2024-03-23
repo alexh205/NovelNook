@@ -1,19 +1,15 @@
-from typing import List
-import bcrypt
-
-# from sqlmodel import Relationship
 from . import Field, SQLModel, datetime, Column, DateTime, func
 
 
 class User(SQLModel, table=True):
-    # Primary keys are automatically indexed by the database
     id: int | None = Field(default=None, primary_key=True)
-    username: str
-    email: str
-    password_hash: str | None
-    first_name: str
-    last_name: str
-    is_author: bool
+    username: str = Field(max_length=16, nullable=False, unique=True)
+    email: str = Field(unique=True)
+    hashed_password: str = Field(max_length=24, nullable=False)
+    first_name: str = Field(max_length=18, nullable=False)
+    last_name: str = Field(max_length=28, nullable=False)
+    profile_img: str | None = Field(default=None)
+    is_author: bool | None = Field(default=False)
     is_active: bool = Field(default=True)
     created_at: datetime | None = Field(
         default=None,
@@ -23,31 +19,35 @@ class User(SQLModel, table=True):
         ),
     )
 
-    updated_at: datetime | None = Field(
-        default=None,
-        sa_column=Column(
-            DateTime(timezone=True),
-            onupdate=func.now(),
-        ),
-    )
-
     # ! Relationships
     # books: List["Book"] = Relationship(back_populates="author")
 
-    # ? Methods
-    def __init__(self, *args, **kwargs):
-        """
-        Method that is called with each class instance creation for password hashing functionality
-        """
-        super().__init__(*args, **kwargs)
-        if "password" in kwargs:
-            self.set_password(kwargs["password"])  # Hash and set the password
 
-    def set_password(self, password):
-        salt = bcrypt.gensalt()
-        self.password_hash = bcrypt.hashpw(password.encode("utf-8"), salt)
+class UserRead(SQLModel):
+    id: int
+    username: str
+    email: str
+    first_name: str
+    last_name: str
+    profile_img: str | None
+    is_author: bool
 
-    def check_password(self, password):
-        return bcrypt.checkpw(
-            password.encode("utf-8"), self.password_hash.encode("utf-8")
-        )
+
+class UserCreate(SQLModel):
+    username: str
+    email: str
+    hashed_password: str
+    first_name: str
+    last_name: str
+    profile_img: str | None
+
+
+class UserUpdate(SQLModel):
+    username: str | None = None
+    email: str | None = None
+    old_password: str | None = None
+    new_password: str | None = None
+    first_name: str | None = None
+    last_name: str | None = None
+    profile_img: str | None = None
+    is_author: bool | None = None

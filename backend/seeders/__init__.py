@@ -1,4 +1,5 @@
 from database import engine
+from utils import set_password
 from sqlmodel import Session, select
 from models import User, Book, Review
 from seeders.users_demo import seed_users, undo_users, session, select, User
